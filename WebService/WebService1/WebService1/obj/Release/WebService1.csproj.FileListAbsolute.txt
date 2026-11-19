@@ -1,0 +1,5 @@
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\WebService1\WebService1\bin\WebService1.dll
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\WebService1\WebService1\bin\WebService1.pdb
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\WebService1\WebService1\obj\Release\ResolveAssemblyReference.cache
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\WebService1\WebService1\obj\Release\WebService1.dll
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\WebService1\WebService1\obj\Release\WebService1.pdb

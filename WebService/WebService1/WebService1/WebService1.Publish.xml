@@ -1,0 +1,8 @@
+<publishData>
+  <publishTarget publishUrl="D:\Mario\Terciario\SA\2022\Ejemplos\WebService\Publicacion\">
+    <file relUrl="bin/WebService1.dll" publishTime="10/06/2022 19:09:01" />
+    <file relUrl="Service1.asmx" publishTime="10/06/2022 18:31:59" />
+    <file relUrl="bin/WebService1.pdb" publishTime="10/06/2022 19:09:01" />
+    <file relUrl="Web.config" publishTime="10/06/2022 18:32:29" />
+  </publishTarget>
+</publishData>

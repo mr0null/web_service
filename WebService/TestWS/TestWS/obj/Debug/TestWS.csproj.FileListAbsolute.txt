@@ -1,0 +1,10 @@
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\bin\Debug\TestWS.exe.config
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\bin\Debug\TestWS.exe
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\bin\Debug\TestWS.pdb
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.Form1.resources
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.Properties.Resources.resources
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.csproj.GenerateResource.Cache
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.exe
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.pdb
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.csproj.AssemblyReference.cache
+D:\Mario\Terciario\SA\2022\Ejemplos\WebService\TestWS\TestWS\obj\Debug\TestWS.csproj.CoreCompileInputs.cache
