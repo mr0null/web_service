@@ -2,6 +2,20 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://i189sa.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://i189sa.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://i189sa.org/">
+      <s:complexType name="ClaseTipoIncidencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Nro_Incidencia" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DNI" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHora" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Motivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="HelloWorld">
         <s:complexType />
       </s:element>
@@ -32,28 +46,44 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DNI" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertClientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="IncidenceGenerate">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DNI" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DNI" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="IncidenceGenerateResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="IncidenceGenerateResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncidenceGenerateResult" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="ChangeStatus">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NroIncidencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nro_Incidencia" type="s:long" />
             <s:element minOccurs="0" maxOccurs="1" name="EstadoNuevo" type="s:string" />
           </s:sequence>
         </s:complexType>
@@ -68,7 +98,7 @@
       <s:element name="QueryStatus">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NroIncidencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nro_Incidencia" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -82,14 +112,14 @@
       <s:element name="QueryIncidence">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="NroIncidencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nro_Incidencia" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
       <s:element name="QueryIncidenceResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="QueryIncidenceResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueryIncidenceResult" type="tns:ClaseTipoIncidencia" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -105,6 +135,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="QueryIncidencesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryIncidencesByClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DNI" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryIncidencesByClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryIncidencesByClientResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -134,6 +185,12 @@
   </wsdl:message>
   <wsdl:message name="ServerDateSoapOut">
     <wsdl:part name="parameters" element="tns:ServerDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertClient" />
+  </wsdl:message>
+  <wsdl:message name="InsertClientSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertClientResponse" />
   </wsdl:message>
   <wsdl:message name="IncidenceGenerateSoapIn">
     <wsdl:part name="parameters" element="tns:IncidenceGenerate" />
@@ -165,6 +222,12 @@
   <wsdl:message name="QueryIncidencesSoapOut">
     <wsdl:part name="parameters" element="tns:QueryIncidencesResponse" />
   </wsdl:message>
+  <wsdl:message name="QueryIncidencesByClientSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryIncidencesByClient" />
+  </wsdl:message>
+  <wsdl:message name="QueryIncidencesByClientSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryIncidencesByClientResponse" />
+  </wsdl:message>
   <wsdl:portType name="Service1Soap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -177,6 +240,10 @@
     <wsdl:operation name="ServerDate">
       <wsdl:input message="tns:ServerDateSoapIn" />
       <wsdl:output message="tns:ServerDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <wsdl:input message="tns:InsertClientSoapIn" />
+      <wsdl:output message="tns:InsertClientSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="IncidenceGenerate">
       <wsdl:input message="tns:IncidenceGenerateSoapIn" />
@@ -197,6 +264,10 @@
     <wsdl:operation name="QueryIncidences">
       <wsdl:input message="tns:QueryIncidencesSoapIn" />
       <wsdl:output message="tns:QueryIncidencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryIncidencesByClient">
+      <wsdl:input message="tns:QueryIncidencesByClientSoapIn" />
+      <wsdl:output message="tns:QueryIncidencesByClientSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
@@ -221,6 +292,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServerDate">
       <soap:operation soapAction="http://i189sa.org/ServerDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <soap:operation soapAction="http://i189sa.org/InsertClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -273,6 +353,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="QueryIncidencesByClient">
+      <soap:operation soapAction="http://i189sa.org/QueryIncidencesByClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -296,6 +385,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServerDate">
       <soap12:operation soapAction="http://i189sa.org/ServerDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertClient">
+      <soap12:operation soapAction="http://i189sa.org/InsertClient" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -341,6 +439,15 @@
     </wsdl:operation>
     <wsdl:operation name="QueryIncidences">
       <soap12:operation soapAction="http://i189sa.org/QueryIncidences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryIncidencesByClient">
+      <soap12:operation soapAction="http://i189sa.org/QueryIncidencesByClient" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
